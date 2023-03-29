@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Kayıt Ol</title>
+
+</head>
+
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a routerLink="/" class="h1"><b>AkLab</b>Group</a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Yeni Üyelik Kaydı</p>
+
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)" autocomplete="off">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Ad" formControlName="firstName" [ngClass]="{'is-invalid':submitted &&  component.firstName.errors}">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="bi bi-person-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Soyad" formControlName="lastName" [ngClass]="{'is-invalid':submitted &&  component.lastName?.errors}">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="bi bi-person-check-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="text-danger" *ngIf="submitted &&  component.firstName.errors?.required"><i class="bi bi-x-circle-fill"></i> Ad Boş Olamaz</p>
+                            <p class="text-danger" *ngIf=" component.firstName.errors?.minlength"><i class="bi bi-x-circle-fill"></i> Minimum 2 karakter olmalı</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="text-danger" *ngIf="submitted && component.lastName.errors?.required"><i class="bi bi-x-circle-fill"></i> Soyad Boş Olamaz</p>
+                            <p class="text-danger" *ngIf=" component.lastName.errors?.minlength"><i class="bi bi-x-circle-fill"></i> Minimum 2 karakter olmalı</p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Kullanıcı Adı" formControlName="userName" [ngClass]="{'is-invalid':submitted && component.userName?.errors}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger" *ngIf="submitted && component.lastName.errors?.required"><i class="bi bi-x-circle-fill"></i> Kullanıcı Adı Boş Olamaz</p>
+                    <p class="text-danger" *ngIf=" component.userName.errors?.minlength"><i class="bi bi-x-circle-fill"></i> Minimum 2 karakter olmalı</p>
+
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{'is-invalid':submitted &&  component.email?.errors}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger" *ngIf="component.email.errors?.email"><i class="bi bi-x-circle-fill"></i> '@' , '.' içermeli</p>
+                    <p class="text-danger" *ngIf="submitted && component.email.errors?.required"><i class="bi bi-x-circle-fill"></i> Email Boş Olamaz</p>
+                    <div class="input-group mb-3">
+                        <input [type]="hide1 ? 'password' : 'text'" autocomplete="on" class="form-control" placeholder="Şifre" formControlName="password" [ngClass]="{'is-invalid':submitted &&  component.password.errors}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <a type="button" aria-label="şifreyi göster" (click)="hide1 = !hide1" [class]="!hide1 ? 'fa-light fa-regular fa-eye' : 'fa-regular fa-eye-slash'" ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger" *ngIf="submitted && component.password.errors?.required"><i class="bi bi-x-circle-fill"></i> Şifre Boş Olamaz</p>
+                    <p class="text-danger" *ngIf="component.password.errors?.minlength"><i class="bi bi-x-circle-fill"></i> Minimum 5 karakter olmalı</p>
+                    <p class="text-danger" *ngIf="component.password.errors?.pattern"><i class="bi bi-x-circle-fill"></i> Büyük,küçük harf ve sayı içermeli</p>
+                    <div class="input-group mb-3">
+                        <input [type]="hide ? 'password' : 'text'" autocomplete="on" class="form-control" placeholder="Şifre Tekrar" [ngClass]="{'is-invalid':submitted &&  component.passwordConfirm.errors}"
+                            formControlName="passwordConfirm">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <a type="button" aria-label="şifreyi göster" (click)="hide = !hide" [class]="!hide ? 'fa-sharp fa-solid fa-eye' : 'fa-sharp fa-solid fa-eye-slash'"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-danger" *ngIf="registerForm.hasError('notSame')"><i class="bi bi-x-circle-fill"></i> Şifreler Eşleşmiyor</p>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                <label for="agreeTerms">
+                                    Şartları kabul<a href="#">ediyorum</a>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <div class="social-auth-links text-center mt-2 mb-1 p-1">
+                    <button (click)="facebookLogin()" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook mr-2"></i> Facebook ile Kayıt Ol
+                    </button>
+                </div>
+                <div class="social-auth-links text-center ml-2">
+                    <asl-google-signin-button type='standard' size='large' logo_alignment="left" shape='rectangular' theme="filled_black" text="signin_with">
+                    </asl-google-signin-button>
+                </div>
+
+
+
+                <a routerLink="/login" class="text-center">Zaten Hesabım var Giriş Yap</a>
+            </div>
+            <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+
+</body>
+
+</html>

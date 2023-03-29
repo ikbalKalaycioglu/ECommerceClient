@@ -1,0 +1,23 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a routerLink="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <i class="bi bi-7-circle text-white fs-2"></i>
+        <span class="fs-4 text-white navbar-brand">Simple header</span>
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        <li><a routerLink="admin" class="nav-link px-2 text-yellow" *ngIf="authService.isAuthenticated">Yönetim Paneli</a></li>
+      </ul>
+
+      <div class="text-end">
+        <a routerLink="/login"><button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.isAuthenticated">Giriş Yap</button></a>
+        <a routerLink="/register"><button type="button" class="btn btn-warning" *ngIf="!authService.isAuthenticated">Kayıt Ol</button></a>
+      </div>
+    </div>
+  </div>
+</header>

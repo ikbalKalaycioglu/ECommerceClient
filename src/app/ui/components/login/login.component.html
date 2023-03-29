@@ -1,0 +1,76 @@
+<body class="hold-transition login-page">
+
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a routerLink="/" class="h1"><b>AkLab</b>Group</a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Oturum açın</p>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" autocomplete="off" autocomplete="nope">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Kullanıcı Adı & Email" formControlName="userNameOrEmail">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input [type]="hide ? 'password' : 'text'" autocomplete="on" class="form-control" placeholder="Şifre" formControlName="password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <a type="button" aria-label="şifreyi göster" (click)="hide = !hide" [class]="!hide ? 'fa-sharp fa-solid fa-eye' : 'fa-sharp fa-solid fa-eye-slash'" ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">
+                                    Beni Hatırla
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+                <div class="social-auth-links text-center mt-2 mb-1 p-1">
+                    <button (click)="facebookLogin()" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook mr-2"></i> Facebook ile Giriş Yap
+                    </button>
+                </div>
+                <div class="social-auth-links text-center mb-3 ml-3">
+                    <asl-google-signin-button type='standard' size='large' logo_alignment="left" shape='rectangular' theme="filled_black" text="signin_with">
+                    </asl-google-signin-button>
+                </div>
+
+
+                <!-- /.social-auth-links -->
+                <div class="row justify-content-between">
+                    <div class="col-7">
+                        <p>
+                            <a routerLink="/forgot-password">Şifremi Unuttum</a>
+                        </p>
+                    </div>
+                    <div class="col-3">
+                        <p>
+                            <a routerLink="/register" class="text-center">Kayıt Ol</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.login-box -->
+</body>
