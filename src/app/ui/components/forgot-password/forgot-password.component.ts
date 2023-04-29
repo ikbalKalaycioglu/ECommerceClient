@@ -16,7 +16,6 @@ export class ForgotPasswordComponent extends BaseComponent {
   }
 
   passwordReset(email: string) {
-    console.log(email);
     this.showSpinner(SpinnerType.BallRunningDots);
     this.userService.passwordReset(email, () => {
           this.hideSpinner(SpinnerType.BallRunningDots);

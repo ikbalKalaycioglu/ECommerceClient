@@ -34,25 +34,33 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
-                    <a routerLink="/admin" class="nav-link active">
+                <li class="nav-item">
+                    <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/admin" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Products
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" type="button"routerLink="/admin/products" [routerLinkActiveOptions]="{exact:false}" routerLinkActive="active">
+                        <i class="nav-icon fa-solid fa-store"></i>
+                        <p>
+                            Ürünler
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
+                            <a routerLink="/admin/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Products Add</p>
+                                <p>Tüm Ürünler</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a routerLink="/admin/products/add" routerLinkActive="active" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Products Update</p>
+                                <p>Ürün Ekle</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -64,7 +72,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/users" class="nav-link">
+                    <a routerLink="/admin/users" class="nav-link" routerLinkActive="active">
                         <i class="nav-icon fa-solid fa-user"></i>
                         <p>
                             Users

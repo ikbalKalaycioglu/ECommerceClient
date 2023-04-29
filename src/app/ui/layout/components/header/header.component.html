@@ -1,23 +1,53 @@
-<header class="p-3 text-bg-dark">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a routerLink="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <i class="bi bi-7-circle text-white fs-2"></i>
-        <span class="fs-4 text-white navbar-brand">Simple header</span>
-      </a>
-
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-        <li><a routerLink="admin" class="nav-link px-2 text-yellow" *ngIf="authService.isAuthenticated">Yönetim Paneli</a></li>
-      </ul>
-
-      <div class="text-end">
-        <a routerLink="/login"><button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.isAuthenticated">Giriş Yap</button></a>
-        <a routerLink="/register"><button type="button" class="btn btn-warning" *ngIf="!authService.isAuthenticated">Kayıt Ol</button></a>
+<header >
+  <!-- Header Start -->
+  <div class="header-area">
+    <div class="main-header header-sticky">
+      <div class="container-fluid">
+        <div class="menu-wrapper">
+          <!-- Logo -->
+          <div class="logo">
+            <a routerLink="/"><img style="width: 125px;" src="assets/img/Aklab-logo.png" alt="Aklab-logo"></a>
+          </div>
+          <!-- Main-menu -->
+          <div class="main-menu d-none d-lg-block">
+            <nav>
+              <ul id="navigation">
+                <li><a routerLink="/">AnaSayfa</a></li>
+                <li class="hot"><a routerLink="/">Ürünlerimiz</a>
+                  <ul class="submenu">
+                    <li><a href="shop.html">E-Katalog</a></li>
+                  </ul>
+                </li>
+                <li><a href="blog.html">Blog</a>
+                  <ul class="submenu">
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog-details.html">Blog Details</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Hakkımızda</a>
+                  <ul class="submenu">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="elements.html">Element</a></li>
+                    <li><a href="confirmation.html">Confirmation</a></li>
+                    <li><a href="checkout.html">Product Checkout</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li><a routerLink="admin" class="nav-link px-2 text-yellow" *ngIf="authService.isAuthenticated">Yönetim Paneli</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Header Right -->
+          <div class="header-right">
+            <a routerLink="/login" *ngIf="!authService.isAuthenticated"><span><i class="fa-solid fa-user">&nbsp;&nbsp;&nbsp;</i>Giriş Yap</span></a>
+            <a routerLink="/register" *ngIf="!authService.isAuthenticated"><span><i class="fa-regular fa-user">&nbsp;&nbsp;&nbsp;</i>Kayıt Ol</span></a>
+            <!-- <a href="cart.html"><span class="fa-solid fa-cart-shopping"></span></a> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <!-- Header End -->
 </header>
+<!--  -->

@@ -3,3 +3,7 @@
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
+
+<a (click)="gotoTop()" *ngIf="isShow" type="button" id="scrollUp" style="position: fixed; z-index: 2147483647; display: block;">
+    <i class="fas fa-level-up-alt"></i>
+</a>
