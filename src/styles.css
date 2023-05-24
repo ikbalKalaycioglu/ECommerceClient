@@ -1,3 +1,76 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '~animate.css/animate.min';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.slicknav_menu {
+    background: transparent !important;
+    margin-top: 0px !important;
+    display: none;
+}
+
+.slicknav_menu .slicknav_btn .slicknav_icon-bar {
+    background-color: #ff2020 !important;
+    height: 3px;
+    margin: 5px 0px;
+    width: 30px;
+    transition: all 0.3s ease 0s;
+
+}
+
+.slicknav_menu .slicknav_btn{
+    background-color: transparent !important;
+}
+
+.slicknav_menu .slicknav_nav {
+    margin-top: 16px !important
+}
+
+.slicknav_menu .slicknav_nav a:hover {
+    background: transparent !important;
+    color: #ff2020 !important
+}
+
+.slicknav_menu .slicknav_nav a {
+    font-size: 15px !important;
+    padding: 7px 10px !important;
+    color: #000 !important;
+    font-weight: 400 !important;
+    text-transform: capitalize !important;
+    margin: 2px 5px !important;
+    text-decoration: none !important;
+}
+
+.slicknav_nav .slicknav_arrow{
+    float: right;
+    font-size: 22px !important;
+    position: relative !important;
+    top: -9px !important;
+}
+
+.slicknav_menu .slicknav_nav .slicknav_item a {
+    padding: 0 !important
+}
+
+.slicknav_nav ul {
+    
+    margin: 0 0 0 30px !important;
+}
+
+@media screen and (max-width: 991px) {
+
+    /* #menu is the original menu */
+    .slicknav_menu {
+        display: block;
+        
+    }
+}

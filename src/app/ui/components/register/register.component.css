@@ -68,7 +68,13 @@ h5,
 .login-wrap {
     width: 50%;
 }
+@media (max-width: 769px) {
+    .img,
+    .login-wrap  {
+        width: 100%;
 
+    }
+}
 .login-wrap {
     position: relative;
     background: white h3;
@@ -175,8 +181,8 @@ h5,
     font-family: "FontAwesome";
     position: absolute;
     color: rgba(0, 0, 0, .1);
-    font-size: 20px;
-    margin-top: -4px;
+    font-size: 25px;
+    margin-top: -1px;
 }
 
 /* Show the checkmark when checked */

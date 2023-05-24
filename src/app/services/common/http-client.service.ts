@@ -63,6 +63,3 @@ export class RequestParameters {
   fullEndPoint?: string;
   params: HttpParams;
 }
-
-
-// --skip-tests	

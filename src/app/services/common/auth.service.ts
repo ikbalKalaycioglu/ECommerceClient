@@ -2,7 +2,7 @@ import { SocialUser } from '@abacritt/angularx-social-login';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { Observable, firstValueFrom } from 'rxjs';
+import { Observable, firstValueFrom, throwError } from 'rxjs';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 import { Token } from 'src/app/contracts/Users/Token';
 import { UserLogin } from 'src/app/Entites/User/userLogin';
@@ -94,19 +94,23 @@ export class AuthService extends BaseComponent {
       return false;
     }
   }
-  async refreshTokenLogin(refreshToken: string, callBackFunction?: () => void) {
+  async refreshTokenLogin(refreshToken: string): Promise<Token> {
     const observable: Observable<string | Token> = this.httpClientService.post<string | Token>({
       controller: "Auth",
       action: "refreshTokenLogin"
-    }, {refreshToken:refreshToken});
+    }, { refreshToken: refreshToken });
+
     const token: Token = await firstValueFrom(observable) as Token;
     if (token) {
       localStorage.setItem("accessToken", token.accessToken);
       localStorage.setItem("refreshToken", token.refreshToken);
+      return token;
+    } else {
+      return null;
     }
-
-    callBackFunction();
   }
+
+
 }
 
 

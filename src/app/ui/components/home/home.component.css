@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,500,600,700|Roboto:100,300,400,500,700&display=swap");
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Josefin Sans", sans-serif;
+    color: #0b1c39;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: normal
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal
+}
+
+span {
+    font-family: "Josefin Sans", sans-serif
+}
+
+
+a,
+.button {
+    -webkit-transition: all .3s ease-out 0s;
+    -moz-transition: all .3s ease-out 0s;
+    -ms-transition: all .3s ease-out 0s;
+    -o-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s
+}
+
+a:focus,
+.button:focus {
+    text-decoration: none;
+    outline: none
+}
+
+
+a {
+    color: #635c5c
+}
+
+a:hover {
+    color: #fff
+}
+
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer -menu li a:hover {
+    text-decoration: none
+}
+
+a,
+button {
+    color: #fff;
+    outline: medium none
+}
+
+
+
+.section-tittle h2 {
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .section-tittle h2 {
+        font-size: 37px
+    }
+}
+
+@media (max-width: 575px) {
+    .section-tittle h2 {
+        font-size: 33px
+    }
+}
+
+.btn {
+    background: #ff2020;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 30px 28px;
+    border-radius: 0px;
+    display: inline-block;
+    line-height: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #4a4a4b;
+    z-index: 1;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+    border-radius: 0px
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+    color: #fff !important;
+     z-index: -1 
+}
+
+
+.popular-items .single-popular-items .popular-img {
+    overflow: hidden;
+    border-bottom: 3px solid #ff2020;
+    margin-bottom: 19px;
+    position: relative
+}
+
+.popular-items .single-popular-items .popular-img img {
+    width: 100%
+}
+
+.popular-items .single-popular-items .popular-img .img-cap {
+    position: absolute;
+    bottom: -20%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+.popular-items .single-popular-items:hover .popular-img .img-cap{
+    bottom: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.popular-items .single-popular-items:hover .popular-img .favorit-items{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.popular-items .single-popular-items .popular-img .favorit-items {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+.popular-items .single-popular-items .popular-img .img-cap span {
+    color: #fff;
+    background: #f81f1f;
+    padding: 20px 0;
+    display: block;
+    cursor: pointer
+}
+
+
+
+.popular-items .single-popular-items .popular-img .favorit-items span {
+    color: #333333;
+    font-size: 30px;
+    cursor: pointer
+}
+
+.popular-items .single-popular-items .popular-caption h3 a {
+    color: #444444;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .popular-items .single-popular-items .popular-caption h3 a {
+        font-size: 17px
+    }
+}
+
+@media (max-width: 575px) {
+    .popular-items .single-popular-items .popular-caption h3 a {
+        font-size: 20px
+    }
+}
+
+.popular-items .single-popular-items .popular-caption span {
+    color: #444444;
+    font-size: 18px;
+    font-weight: 500;
+    display: block
+}

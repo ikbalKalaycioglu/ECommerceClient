@@ -1,21 +1,21 @@
-<header >
+<header class="header" (scroll)="onscroll()" [ngClass]="navbarfixed?'sticky-top':'not-sticky'">
   <!-- Header Start -->
   <div class="header-area">
-    <div class="main-header header-sticky">
+    <div class="main-header">
       <div class="container-fluid">
         <div class="menu-wrapper">
           <!-- Logo -->
           <div class="logo">
-            <a routerLink="/"><img style="width: 125px;" src="assets/img/Aklab-logo.png" alt="Aklab-logo"></a>
+            <a routerLink="/"><img style="width: 100px;" src="assets/img/Aklab-logo.png" alt="Aklab-logo"></a>
           </div>
           <!-- Main-menu -->
-          <div class="main-menu d-none d-lg-block">
+          <div class="main-menu d-lg-block">
             <nav>
-              <ul id="navigation">
+              <ul class="mb-0" id="slick_menu">
                 <li><a routerLink="/">AnaSayfa</a></li>
-                <li class="hot"><a routerLink="/">Ürünlerimiz</a>
+                <li class="hot"><a routerLink="/shop">Ürünlerimiz</a>
                   <ul class="submenu">
-                    <li><a href="shop.html">E-Katalog</a></li>
+                    <li><a href="assets/e-katalog/AKLAB-E-Katalog.pdf" download="AKLAB-E-Katalog">E-Katalog</a></li>
                   </ul>
                 </li>
                 <li><a href="blog.html">Blog</a>
@@ -33,7 +33,7 @@
                     <li><a href="checkout.html">Product Checkout</a></li>
                   </ul>
                 </li>
-                <li><a href="contact.html">İletişim</a></li>
+                <li><a routerLink="/iletisim">İletişim</a></li>
                 <li><a routerLink="admin" class="nav-link px-2 text-yellow" *ngIf="authService.isAuthenticated">Yönetim Paneli</a></li>
               </ul>
             </nav>

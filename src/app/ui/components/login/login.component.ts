@@ -15,8 +15,8 @@ import { AuthService } from 'src/app/services/common/auth.service';
 export class LoginComponent extends BaseComponent implements OnInit {
 
   loginForm: FormGroup;
-  hide:boolean = true;
-  
+  hide: boolean = true;
+
   constructor(private formBuilder: FormBuilder, spinner: NgxSpinnerService, private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute, private socialAuthService: SocialAuthService) {
     super(spinner);
     socialAuthService.authState.subscribe(async (user: SocialUser) => {
@@ -37,6 +37,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
           })
           break;
       }
+      this.hideSpinner(SpinnerType.AkLab)
+
     });
   }
 
@@ -54,6 +56,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
     if (this.loginForm.invalid)
       return;
     const result = await this.authService.login(user);
+
+
     if (result) {
       this.authService.identityCheck()
       this.activatedRoute.queryParams.subscribe(params => {

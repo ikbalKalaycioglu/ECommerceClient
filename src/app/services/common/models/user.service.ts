@@ -41,6 +41,16 @@ export class UserService {
     return state;
   }
 
+  async verifyEmailToken(userId: string, token: string, callBackFunction?: () => void): Promise<boolean> {
+    const observable: Observable<any> = this.httpClientService.post({
+      controller: "user",
+      action: "verifyEmail",
+    }, { userId: userId, token: token });
+    const state: boolean = await firstValueFrom(observable);
+    callBackFunction()
+    return state;
+  }
+
   async updatePassword(userId: string, resetToken: string, password: string, confirmPassword: string, successCallBack?: () => void) {
     const observable: Observable<any> = this.httpClientService.post({
       controller: "user",
@@ -49,6 +59,16 @@ export class UserService {
     const promiseData: Promise<any> = firstValueFrom(observable);
     promiseData.then(value => successCallBack());
     await promiseData;
+  }
+
+  async sendVerifyEmail(email: string, callBackFunction?: () => void) {
+    const observable: Observable<any> = this.httpClientService.post({
+      controller: "user",
+      action: "verifyEmailSend",
+      params: new HttpParams().set("email", email),
+    })
+    await firstValueFrom(observable);
+    callBackFunction();
   }
 
 }

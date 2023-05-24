@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,500,600,700|Roboto:100,300,400,500,700&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Josefin Sans", sans-serif;
+    color: #0b1c39;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: normal
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal
+}
+
+span {
+    font-family: "Josefin Sans", sans-serif
+}
+
+.satir {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.popular-items .nav-tabs {
+    margin-bottom: 15px;
+    padding-bottom: 0px;
+    position: relative;
+    border: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.popular-items .nav-tabs .nav-item {
+    padding-bottom: 10px;
+    display: block;
+    color: #1b1b1b;
+    text-transform: capitalize;
+    font-size: 16px;
+    border: 0;
+}
+
+.popular-items .nice-select {
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    border: none;
+    color: #333333;
+    height: 31px;
+    line-height: 31px;
+    padding-right: 47px;
+}
+.popular-items .nav-tabs .nav-link.active {
+    background: none;
+    border-bottom: 2px solid #ff5757;
+    position: relative;
+}
+
+.popular-items .nav-tabs .nav-link:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+
+
+.popular-items .single-popular-items .popular-img {
+    overflow: hidden;
+    border-bottom: 3px solid #ff2020;
+    margin-bottom: 19px;
+    position: relative
+}
+
+.popular-items .single-popular-items .popular-img img {
+    width: 100%
+}
+
+.popular-items .single-popular-items .popular-img img:hover {
+    cursor: pointer;
+}
+
+.popular-items .single-popular-items .popular-img .img-cap {
+    position: absolute;
+    bottom: -20%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+.popular-items .single-popular-items:hover .popular-img .img-cap {
+    bottom: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.popular-items .single-popular-items:hover .popular-img .favorit-items {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.popular-items .single-popular-items .popular-img .favorit-items {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s
+}
+
+.popular-items .single-popular-items .popular-img .img-cap span {
+    color: #fff;
+    background: #f81f1f;
+    padding: 20px 0;
+    display: block;
+    cursor: pointer
+}
+
+
+
+.popular-items .single-popular-items .popular-img .favorit-items span {
+    color: #333333;
+    font-size: 30px;
+    cursor: pointer
+}
+
+.popular-items .single-popular-items .popular-caption h3 a {
+    color: #444444;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .popular-items .single-popular-items .popular-caption h3 a {
+        font-size: 17px
+    }
+}
+
+@media (max-width: 575px) {
+    .popular-items .single-popular-items .popular-caption h3 a {
+        font-size: 20px
+    }
+}
+
+.popular-items .single-popular-items .popular-caption span {
+    color: #444444;
+    font-size: 18px;
+    font-weight: 500;
+    display: block
+}

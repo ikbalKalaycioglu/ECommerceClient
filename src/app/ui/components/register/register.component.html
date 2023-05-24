@@ -76,15 +76,15 @@
                                     formControlName="passwordConfirm">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
-                                        <a type="button" aria-label="şifreyi göster" (click)="hide = !hide" [class]="!hide ? 'fa-sharp fa-solid fa-eye' : 'fa-sharp fa-solid fa-eye-slash'"></a>
+                                        <a type="button" aria-label="şifreyi göster" (click)="hide = !hide" [class]="!hide ? 'fa-regular fa-eye-slash':'fa-light fa-regular fa-eye'"></a>
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-danger" *ngIf="registerForm.hasError('notSame')"><i class="bi bi-x-circle-fill"></i> Şifreler Eşleşmiyor</p>
+                            <p class="text-danger" *ngIf="!registerForm.hasError('notSame') && component.passwordConfirm.touched"><i class="bi bi-x-circle-fill"></i> Şifreler Eşleşmiyor</p>
                             <div class="form-group d-md-flex">
                                 <div class="w-50 text-left">
                                     <label class="checkbox-wrap checkbox-primary mb-0">Şartları Kabul Ediyorum
-                                        <input type="checkbox">
+                                        <input type="checkbox" formControlName="terms">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -107,7 +107,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </form>
                         <p class="text-center mt-3">Zaten Hesabım Var <a data-toggle="tab" routerLink="/login">Giriş Yap</a></p>
                     </div>

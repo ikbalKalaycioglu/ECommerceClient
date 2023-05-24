@@ -32,7 +32,7 @@ h5,
 
 .ftco-section {
 
-    margin-top: 7rem;
+    margin-top: 3rem;
 }
 
 .ftco-no-pt {
@@ -67,6 +67,15 @@ h5,
 .img,
 .login-wrap {
     width: 50%;
+}
+
+@media (max-width: 769px) {
+
+    .img,
+    .login-wrap {
+        width: 100%;
+
+    }
 }
 
 .login-wrap {

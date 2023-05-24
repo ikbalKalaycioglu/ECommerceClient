@@ -12,7 +12,6 @@ const MaterialComponents = [
   MatIconModule
 ]
 
-
 @NgModule({
   declarations: [
     HomeComponent
